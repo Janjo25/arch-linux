@@ -204,3 +204,54 @@ systemctl enable NetworkManager
 ```bash
 passwd
 ```
+
+## 14. Configure GRUB Bootloader
+
+### Run GRUB Installation Command
+
+To set up GRUB as the boot loader on your UEFI system, run:
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+```
+
+> **Note:** In some cases, especially with certain MSI motherboards, the system might not detect the GRUB installation
+> correctly. If this happens, reinstall GRUB using the `--removable` flag to ensure compatibility:
+> ```bash
+> grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
+> ```
+
+### Generate the GRUB Configuration File
+
+Create the GRUB configuration file by running:
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Verify the Installation
+
+To verify that GRUB was installed correctly, check for its presence in the EFI directory:
+
+```bash
+ls /boot/efi/EFI
+```
+
+You should see a folder named `GRUB`.
+
+### Exit the chroot Environment
+
+Once the GRUB configuration is complete, exit the chroot environment:
+
+```bash
+exit
+```
+
+## 15. Unmount Partitions and Reboot
+
+Unmount the partitions and reboot the system:
+
+```bash
+umount -R /mnt
+reboot
+```
