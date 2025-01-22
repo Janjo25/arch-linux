@@ -3,7 +3,7 @@
 ## Display the content of files in a directory
 
 ```bash
-for file in dir; do echo "Content of $file:"; cat "$file"; echo; done
+for file in *; do echo "Content of $file:"; cat "$file"; echo; done
 ```
 
 ## Global search for files or directories by name
