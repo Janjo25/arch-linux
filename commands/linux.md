@@ -6,6 +6,12 @@
 for file in *; do echo "Content of $file:"; cat "$file"; echo; done
 ```
 
+## Display the content of files in a directory **recursively**
+
+```bash
+find . -type f -exec echo "Content of {}:" \; -exec cat {} \; -exec echo \;
+```
+
 ## Global search for files or directories by name
 
 ```bash
