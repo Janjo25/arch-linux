@@ -23,3 +23,9 @@ sudo find / -iname "*term*" 2>/dev/null
 ```bash
 sudo updatedb && locate term
 ```
+
+## Find manually installed packages
+
+```bash
+grep "pacman -S " /var/log/pacman.log
+```
