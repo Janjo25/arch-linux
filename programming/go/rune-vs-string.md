@@ -118,5 +118,3 @@ to use each type is crucial for writing efficient and clear code.
 - **`rune` is suitable for single-character handling, Unicode, or character arithmetic.**
 - **`string` is preferable for labels, words, or textual data.**
 - **If uncertain, consider whether the value represents a single character or a meaningful word.**
-
----
